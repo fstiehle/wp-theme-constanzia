@@ -127,33 +127,3 @@ function constanzia_s_button($atts, $content = null) {
     return '<a href="' . $style . '" class="btn ' . $style . '">' . do_shortcode($content) . '</a>';
 }
 add_shortcode('button', 'constanzia_s_button');
-
-/* spam free email */
-/**
- * Hide email from Spam Bots using a shortcode.
- */
-function constanzia_hide_email_shortcode($atts, $content = null) {
-    if (!is_email($content)) {
-        return;
-    }
-    
-    return '<a href="mailto:' . antispambot($content) . '">' . antispambot($content) . '</a>';
-}
-add_shortcode('email', 'constanzia_hide_email_shortcode');
-
-/**
- * Additional user fields
- */
-function constanzia_user_fields($profile_fields) {
-    
-    // Add new fields
-    $profile_fields['twitter']   = __('Twitter URL', 'constanzia');
-    $profile_fields['facebook']  = __('Facebook URL', 'constanzia');
-    $profile_fields['gplus']     = __('Google+ URL', 'constanzia');
-    $profile_fields['pinterest'] = __('Pinterest URL', 'constanzia');
-    $profile_fields['instagram'] = __('Instagram URL', 'constanzia');
-    $profile_fields['youtube']   = __('Youtube URL', 'constanzia');
-    
-    return $profile_fields;
-}
-add_filter('user_contactmethods', 'constanzia_user_fields');

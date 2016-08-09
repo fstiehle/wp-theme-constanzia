@@ -30,7 +30,7 @@
 
 		<h1 class="entry-title">
 			<a href="<?php echo esc_url(constanzia_get_link_url());?>">
-                <?php the_title(); ?></a> →
+                <?php the_title(); ?></a> &#8594; <!-- Arrow -->
 		</h1>
 
 		<div class="entry-meta">

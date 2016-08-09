@@ -24,8 +24,8 @@ function constanzia_paging_nav() {
         <?php
             if (get_next_posts_link()): ?>
                 <div class="nav-previous">
-                    <?php next_posts_link(__('<span class="meta-nav"><i class="fa fa-long-arrow-left"></i></span>' .
-                        '<span class="nav-text">Older posts</span>', 'constanzia')); ?>
+                    <?php next_posts_link(__('<span class="meta-nav"><i class="fa fa-long-arrow-left"></i></span>
+                        <span class="nav-text">Older posts</span>', 'constanzia')); ?>
                 </div>
             <?php endif;
         ?>
@@ -33,8 +33,8 @@ function constanzia_paging_nav() {
         <?php
             if (get_previous_posts_link()): ?>
                 <div class="nav-next">
-                    <?php previous_posts_link(__('<span class="nav-text">Newer posts</span>' . 
-                        '<span class="meta-nav"><i class="fa fa-long-arrow-right"></i></span>', 'constanzia')); ?>
+                    <?php previous_posts_link(__('<span class="nav-text">Newer posts</span>
+                        <span class="meta-nav"><i class="fa fa-long-arrow-right"></i></span>', 'constanzia')); ?>
                 </div>
             <?php endif;
         ?>
