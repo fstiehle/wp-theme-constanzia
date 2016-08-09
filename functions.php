@@ -32,6 +32,9 @@ function constanzia_setup() {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support('automatic-feed-links');
+    
+    // https://make.wordpress.org/themes/2015/08/25/title-tag-support-now-required/ 
+    add_theme_support( 'title-tag' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
