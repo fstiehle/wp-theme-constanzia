@@ -41,12 +41,6 @@ function constanzia_customize_register($wp_customize) {
     );
     
     $colors[] = array(
-        'slug' => 'quickpost_backgroundcolor',
-        'default' => '#f5f5f5',
-        'label' => __('Quick Post Card Background Color', 'constanzia')
-    );
-    
-    $colors[] = array(
         'slug' => 'pagetitle_backgroundcolor',
         'default' => '#f5f5f5',
         'label' => __('Page Title Box Background Color', 'constanzia')
@@ -97,51 +91,6 @@ function constanzia_customize_register($wp_customize) {
             'right' => __('Right', 'constanzia')
         )
     ));
-    
-    /**/
-    
-    $wp_customize->add_section('quickposts_options', array(
-        'title' => 'Quick Posts',
-        'priority' => 31
-    ));
-    
-    $wp_customize->add_setting('quickposts_limit', array(
-        'default' => true,
-        'transport' => 'postMessage',
-        'default' => 30
-    ));
-    
-    $wp_customize->add_control('quickposts_limit', array(
-        'section' => 'quickposts_options',
-        'label' => 'Max Quickposts to display',
-        'type' => 'text'
-    ));
-    
-    $wp_customize->add_setting('quickposts_live', array(
-        'default' => true,
-        'transport' => 'postMessage',
-        'default' => true
-    ));
-    
-    $wp_customize->add_control('quickposts_live', array(
-        'section' => 'quickposts_options',
-        'label' => 'Enable Live Updates',
-        'type' => 'checkbox'
-    ));
-    
-    $wp_customize->add_setting('quickposts_title', array(
-        'default' => true,
-        'transport' => 'postMessage',
-        'default' => true
-    ));
-    
-    $wp_customize->add_control('quickposts_title', array(
-        'section' => 'quickposts_options',
-        'label' => 'Show Quickpost Page Title',
-        'type' => 'checkbox'
-    ));
-    
-    
 }
 add_action('customize_register', 'constanzia_customize_register');
 
