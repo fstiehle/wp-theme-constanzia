@@ -905,6 +905,7 @@ html[xmlns] .clearfix {
 }
 .site-header {
 	background-color: #fe767a !important;
+    min-height: 440px;
 }
 
 .site-footer .widget_constanzia_custom_recent_entries .date {
@@ -1488,8 +1489,8 @@ object {
 
 }
 
-@media screen and (max-width: 1110px) {
-	
+@media screen and (max-width: 1110px) {	
+    
 	.site-info, 
 	#secondary,
 	#primary {
@@ -1512,14 +1513,11 @@ object {
 	#secondary {
 		margin-top: 100px;			
 	}
-
-	
+    
 	.site-info .widget {
 		width: 100%;
 		margin: 20px auto;	  
 	}
-
-
 }
 
 @media screen and (max-width: 900px) {
@@ -1572,6 +1570,13 @@ object {
 	background-color: #333333;
 }
 
+/* Wordpress Admin Bar Clipping Fix */
+@media screen and (max-width: 782px) {
+    .admin-bar .nav-wrapper {
+        top: 46px;
+    }
+}
+
 @media screen and (max-width: 600px) {
 
 	.site-content {
@@ -1596,15 +1601,21 @@ object {
 	}
 	.entry-content {
 		margin-top: 1.0rem;
-	}		
+	}
+    
+    .admin-bar .nav-wrapper {
+        top: 0;
+    }
 
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: block;				
-	}	
+	}
+    
 	.site-branding {
 		margin: 100px 30px 0 30px;
-	}	
+	}
+    
 	.site-header {
 		margin-top: -60px;
 	}

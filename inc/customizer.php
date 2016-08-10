@@ -36,15 +36,24 @@ function constanzia_customize_register($wp_customize) {
     $colors = array();
     
     $colors[] = array(
+        'slug' => 'menu_textcolor',
+        'default' => '#fffff',
+        'label' => __('Menu Text Color', 'constanzia'),
+        'description' => ''
+    );
+    
+    $colors[] = array(
         'slug' => 'header_backgroundcolor',
         'default' => '#fe767a',
-        'label' => __('Header Background Color', 'constanzia')
+        'label' => __('Header Background Color', 'constanzia'),
+        'description' => 'Shows if no Header Image is selected.'
     );
     
     $colors[] = array(
         'slug' => 'pagetitle_backgroundcolor',
         'default' => '#f5f5f5',
-        'label' => __('Page Title Box Background Color', 'constanzia')
+        'label' => __('Page Title Box Background Color', 'constanzia'),
+        'description' => 'Background Color for Page, Archive and Category Title Box.'
     );
     
     foreach ($colors as $color) {
@@ -59,7 +68,8 @@ function constanzia_customize_register($wp_customize) {
         $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $color['slug'], array(
             'label' => $color['label'],
             'section' => 'colors',
-            'settings' => $color['slug']
+            'settings' => $color['slug'],
+            'description' => $color['description']
         )));
     }
     

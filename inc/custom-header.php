@@ -43,7 +43,18 @@ function constanzia_header_style() {
 	// If we get this far, we have custom styles. Let's do this. ?>
 
 	<style type="text/css">
-	<?php
+    <?php
+        $menu_text_color = get_option('menu_textcolor');
+        // Menu navigation text color
+		if ('#ffffff' != $menu_text_color) :
+	?>
+        .main-navigation ul a,
+        .main-navigation ul a:hover,
+        .menu-toggle {
+            color: <?php echo $menu_text_color; ?>;
+        } 
+        
+	<?php endif; 
 		// Has the text been hidden?
 		if ('blank' == $header_text_color) :
 	?>
@@ -52,26 +63,21 @@ function constanzia_header_style() {
 			position: absolute;
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-		.site-branding {
-			margin-top: 230px;
-		}
 	<?php
 		// If the user has set a custom color for the text use that
-		elseif ( '#ffffff' != $header_text_color) :
+		elseif ('#ffffff' != $header_text_color) :
 	?>
 		.site-title a,
-		.site-description,
-		.main-navigation ul a,
-		.menu-toggle  {
+		.site-description {
 			color: #<?php echo $header_text_color; ?>;
 		}
 	<?php endif; 
-	if (get_theme_mod('sidebar_alignment') === 'right') { ?>
+	if (get_theme_mod('sidebar_alignment') === 'left') { ?>
 		#primary {
-			float: left;
+			float: right;
 		}
 		#secondary {
-			float: right;
+			float: left;
 		}
 	<?php }	?>
 

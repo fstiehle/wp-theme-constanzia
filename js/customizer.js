@@ -19,12 +19,30 @@
     wp.customize('header_textcolor', function(value) {
         value.bind(function(to) {
             if ('blank' === to) {
-                $('.site-title a, .site-description, .main-navigation ul a, .menu-toggle').css({
+                $('.site-title a, .site-description').css({
                     'clip': 'rect(1px, 1px, 1px, 1px)',
                     'position': 'absolute'
                 });
             } else {
-                $('.site-title a, .site-description, .main-navigation ul a, .menu-toggle').css({
+                $('.site-title a, .site-description').css({
+                    'clip': 'auto',
+                    'color': to,
+                    'position': 'relative'
+                });
+            }
+        });
+    });
+    
+    // Header text color.
+    wp.customize('header_textcolor', function(value) {
+        value.bind(function(to) {
+            if ('blank' === to) {
+                $('.site-title a, .site-description').css({
+                    'clip': 'rect(1px, 1px, 1px, 1px)',
+                    'position': 'absolute'
+                });
+            } else {
+                $('.site-title a, .site-description').css({
                     'clip': 'auto',
                     'color': to,
                     'position': 'relative'
@@ -33,25 +51,13 @@
         });
     });
 
-    wp.customize('header_backgroundcolor', function(value) {
+    wp.customize('menu_textcolor', function(value) {
         value.bind(function(to) {
-
-            $('.site-header').css({
+            $('.main-navigation ul a, .main-navigation ul a:hover, .menu-toggle').css({
                 'background-color': to
             });
-
         });
-    });
-
-    wp.customize('quickposts_title', function(value) {
-        value.bind(function(to) {
-            if (to == false) {
-                $('.post-type-archive-quickposts .page-header').css({
-                    'display': 'none'
-                });
-            }
-        });
-    });
+    });   
 
     wp.customize('main_avatar', function(value) {
         value.bind(function(to) {
@@ -65,17 +71,7 @@
                 $('.avatar').attr("src", to);
             }
         });
-    });
-
-    wp.customize('quickpost_backgroundcolor', function(value) {
-        value.bind(function(to) {
-
-            $('.post-type-archive-quickposts article').css({
-                'background-color': to
-            });
-
-        });
-    });
+    });    
 
     wp.customize('pagetitle_backgroundcolor', function(value) {
         value.bind(function(to) {
