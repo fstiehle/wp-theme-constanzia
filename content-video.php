@@ -8,7 +8,7 @@
 	<header class="entry-header">
 
 			<?php if (has_post_thumbnail()) {
-                if ( s_active_sidebar('sidebar-1')) { ?> 		
+                if (is_active_sidebar('sidebar-1')) { ?> 		
 				
                     <div class="thumbnail-wrap">
                         <a href="<?php the_permalink(); ?>">
