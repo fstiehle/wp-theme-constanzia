@@ -37,7 +37,7 @@ function constanzia_header_style() {
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == $header_text_color ) {
+	if (HEADER_TEXTCOLOR == $header_text_color) {
 		return;
 	}
 	// If we get this far, we have custom styles. Let's do this. ?>
@@ -45,7 +45,7 @@ function constanzia_header_style() {
 	<style type="text/css">
 	<?php
 		// Has the text been hidden?
-		if ( 'blank' == $header_text_color ) :
+		if ('blank' == $header_text_color) :
 	?>
 		.site-title a,
 		.site-description {
@@ -66,7 +66,7 @@ function constanzia_header_style() {
 			color: #<?php echo $header_text_color; ?>;
 		}
 	<?php endif; 
-	if ( get_theme_mod('sidebar_alignment') == 'right' ) { ?>
+	if (get_theme_mod('sidebar_alignment') === 'right') { ?>
 		#primary {
 			float: left;
 		}
@@ -80,13 +80,13 @@ function constanzia_header_style() {
 		}
 	
 
-	<?php if ( get_option('quickpost_backgroundcolor') != '#f5f5f5' ) { ?>
+	<?php if (get_option('quickpost_backgroundcolor') != '#f5f5f5') { ?>
 		.post-type-archive-quickposts article {
 			background-color: <?php echo get_option('quickpost_backgroundcolor'); ?>!important;
 		}
 	<?php } ?>
 
-	<?php if ( get_option('pagetitle_backgroundcolor') != '#f5f5f5' ) { ?>
+	<?php if (get_option('pagetitle_backgroundcolor') != '#f5f5f5') { ?>
 		.page-title {
 			background-color: <?php echo get_option('pagetitle_backgroundcolor'); ?>!important;
 		}
